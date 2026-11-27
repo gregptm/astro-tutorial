@@ -1,4 +1,8 @@
 ---
+
+// pull in global styles
+import '../styles/global.css';
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -13,6 +17,14 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+
+/* primary steyle needs these variables set */
+const skillColor = "crimson";
+
+// secondary style needs theses varables se
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 
@@ -25,7 +37,47 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-	</head>
+                
+                
+
+    <!-- primary style -->
+    <style define:vars={{skillColor}}>
+
+        /* overrides gobal for the body itself that is dd shifted to the right */
+        body {
+            background-color: rgb(151, 171, 187);
+        }   
+
+
+        h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+    
+        .skill {
+                color: green;
+                color: var(--skillColor);
+                font-weight: bold;
+            }
+    </style>
+
+
+    <!-- secondary style -->
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+        h1 {
+            color: purple;
+            font-size: 4rem;
+        }
+        .skill {
+            color: var(--skillColor);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase);
+        }
+    </style>
+
+    
+    
+    </head>
     <body>
         <dd>
             <a href="/">Home</a> &nbsp;|&nbsp; 
@@ -33,8 +85,8 @@ const goal = 3;
             <a href="/blog/">Blog</a>
 
             <h1>My Astro Site</h1>
-            <h1>{pageTitle}</h1>
-            <h2>... and my new Astro site!</h2>
+            <h2>{pageTitle}</h2>
+            <h3>... and my new Astro site!</h3>
 
             <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
 
@@ -48,7 +100,13 @@ const goal = 3;
                 <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
             }
             </ul>
-            <p>My skills are:</p>
+
+            <p>styled: My skills are:</p>
+            <ul>
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
+            </ul>
+
+            <p>org: My skills are:</p>
             <ul>
             {skills.map((skill) => <li>{skill}</li>)}
             </ul>
