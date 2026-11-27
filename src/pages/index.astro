@@ -1,5 +1,11 @@
 ---
+
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
 ---
+
+
 
 <html lang="en">
 	<head>
@@ -16,13 +22,17 @@
 
 	</head>
 	<body>
-		<dd>
-	        <a href="/">Home</a> &nbsp;|&nbsp; 
-	        <a href="/about/">About</a> &nbsp;|&nbsp; 
-        	<a href="/blog/">Blog</a>
+		<Navigation />
+			<dd>
+	        <a href="/">Home2</a> &nbsp;|&nbsp; 
+	        <a href="/about/">About2</a> &nbsp;|&nbsp; 
+        	<a href="/blog/">Blog2</a>
 
 			<h1>Greg's Astro Site</h1>
 	
 		</dd>
+
+        <Footer/>
+
 	</body>
 </html>

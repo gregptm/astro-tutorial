@@ -8,6 +8,8 @@ image:
 pubDate: 2022-07-15
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---
+
+
 <ul>
 <a href="/">Home</a> &nbsp;|&nbsp; 
 <a href="/about/">About</a> &nbsp;|&nbsp; 

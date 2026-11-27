@@ -2,6 +2,9 @@
 
 // pull in global styles
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Social from './Social.astro';
 
 const pageTitle = "About Me";
 
@@ -25,6 +28,7 @@ const skillColor = "crimson";
 // secondary style needs theses varables se
 const fontWeight = "bold";
 const textCase = "uppercase";
+
 ---
 
 
@@ -79,6 +83,8 @@ const textCase = "uppercase";
     
     </head>
     <body>
+        <Navigation />
+
         <dd>
             <a href="/">Home</a> &nbsp;|&nbsp; 
             <a href="/about/">About</a> &nbsp;|&nbsp; 
@@ -118,6 +124,11 @@ const textCase = "uppercase";
             {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
 
-        </dd>    
- </body>
+        </dd> 
+
+        <footer>
+
+        </footer>
+
+  </body>
 </html>
